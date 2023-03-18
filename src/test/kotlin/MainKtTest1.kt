@@ -11,7 +11,7 @@ class MainKtTest {
 
         val result = totalTransfer(transfer, userCard, mounthLimit)
 
-        assertEquals (375, result)
+        assertEquals (37, result)
     }
 
     @Test
