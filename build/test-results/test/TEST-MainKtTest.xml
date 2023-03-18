@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MainKtTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2023-03-18T05:53:58" hostname="Air-Aleksey" time="0.043">
+  <properties/>
+  <testcase name="totalTransferMaestroWithoutDiscont" classname="MainKtTest" time="0.023"/>
+  <testcase name="totalTransferVKWihtoutLimit" classname="MainKtTest" time="0.001"/>
+  <testcase name="totalTransferVisaWithoutDiscont" classname="MainKtTest" time="0.002"/>
+  <testcase name="totalTransferMirWihtDiscount" classname="MainKtTest" time="0.001"/>
+  <testcase name="totalTransferVisaLimit" classname="MainKtTest" time="0.001"/>
+  <testcase name="totalTransferMirLimit" classname="MainKtTest" time="0.0"/>
+  <testcase name="totalTransferMirWihtoutDiscount" classname="MainKtTest" time="0.0"/>
+  <testcase name="totalTransferMasterCardLimit" classname="MainKtTest" time="0.001"/>
+  <testcase name="totalTransferMasterCardWithoutDiscount" classname="MainKtTest" time="0.0"/>
+  <testcase name="totalTransferVKWihtLimit" classname="MainKtTest" time="0.002"/>
+  <testcase name="totalTransferMaestroWithDiscont" classname="MainKtTest" time="0.0"/>
+  <testcase name="totalTransferVKWihtoutDiscount" classname="MainKtTest" time="0.001"/>
+  <testcase name="totalTransferVisaWithDiscount" classname="MainKtTest" time="0.001"/>
+  <testcase name="totalTransferMaestroLimit" classname="MainKtTest" time="0.002"/>
+  <testcase name="totalTransferMasterCardWithDiscount" classname="MainKtTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,1 @@
+/Users/alekseytikhonov/Desktop/Kotlin/Home_Work/4.1/AutoTest/build/classes/kotlin/main/MainKt.class
