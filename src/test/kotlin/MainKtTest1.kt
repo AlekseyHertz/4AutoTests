@@ -5,13 +5,46 @@ class MainKtTest {
 
     @Test
     fun totalTransferVisaWithoutDiscont() {
-        val transfer = 5_000
+        val transfer = 300
         val userCard = "Visa"
         val mounthLimit = 50_000
 
         val result = totalTransfer(transfer, userCard, mounthLimit)
 
-        assertEquals (375, result)
+        assertEquals(35, result)
+    }
+
+    @Test
+    fun totalTransferVisaFall() {
+        val transfer = 50
+        val userCard = "Visa"
+        val mounthLimit = 1_000_000
+
+        val result = totalTransfer(transfer, userCard, mounthLimit)
+
+        assertEquals("Внимание! Сумма месячных переводов по Visa превышена", result)
+    }
+
+    @Test
+    fun totalTransferVisaMin() {
+        val transfer = 35
+        val userCard = "Visa"
+        val mounthLimit = 1_000
+
+        val result = totalTransfer(transfer, userCard, mounthLimit)
+
+        assertEquals(35, result)
+    }
+
+    @Test
+    fun totalTransferVisaWithMinDiscont() {
+        val transfer = 500
+        val userCard = "Visa"
+        val mounthLimit = 50_000
+
+        val result = totalTransfer(transfer, userCard, mounthLimit)
+
+        assertEquals(37, result)
     }
 
     @Test
@@ -22,7 +55,7 @@ class MainKtTest {
 
         val result = totalTransfer(transfer, userCard, mounthLimit)
 
-        assertEquals (15375, result)
+        assertEquals(15375, result)
     }
 
     @Test
@@ -33,18 +66,40 @@ class MainKtTest {
 
         val result = totalTransfer(transfer, userCard, mounthLimit)
 
-        assertEquals ("Внимание! Сумма месячных переводов по Visa превышена", result)
+        assertEquals("Внимание! Сумма месячных переводов по Visa превышена", result)
     }
 
     @Test
-    fun totalTransferMirWihtoutDiscount() {
-        val transfer = 5_000
+    fun totalTransferMirWihtMinDiscount() {
+        val transfer = 300
         val userCard = "Mir"
         val mounthLimit = 50_000
 
         val result = totalTransfer(transfer, userCard, mounthLimit)
 
-        assertEquals (375, result)
+        assertEquals(35, result)
+    }
+
+    @Test
+    fun totalTransferMirMin() {
+        val transfer = 35
+        val userCard = "Mir"
+        val mounthLimit = 50_000
+
+        val result = totalTransfer(transfer, userCard, mounthLimit)
+
+        assertEquals(35, result)
+    }
+
+    @Test
+    fun totalTransferMirWihtoutDiscount() {
+        val transfer = 500
+        val userCard = "Mir"
+        val mounthLimit = 50_000
+
+        val result = totalTransfer(transfer, userCard, mounthLimit)
+
+        assertEquals(37, result)
     }
 
     @Test
@@ -55,7 +110,7 @@ class MainKtTest {
 
         val result = totalTransfer(transfer, userCard, mounthLimit)
 
-        assertEquals (26250, result)
+        assertEquals(26250, result)
     }
 
     @Test
@@ -66,7 +121,7 @@ class MainKtTest {
 
         val result = totalTransfer(transfer, userCard, mounthLimit)
 
-        assertEquals ("Внимание! Сумма месячных переводов по Mir превышена", result)
+        assertEquals("Внимание! Сумма месячных переводов по Mir превышена", result)
     }
 
     @Test
@@ -77,7 +132,7 @@ class MainKtTest {
 
         val result = totalTransfer(transfer, userCard, mounthLimit)
 
-        assertEquals ("Внимание! Сумма месячных переводов по VK_pay превышена", result)
+        assertEquals("Внимание! Сумма месячных переводов по VK_pay превышена", result)
     }
 
     @Test
@@ -88,7 +143,7 @@ class MainKtTest {
 
         val result = totalTransfer(transfer, userCard, mounthLimit)
 
-        assertEquals (0, result)
+        assertEquals(0, result)
     }
 
     @Test
@@ -99,7 +154,7 @@ class MainKtTest {
 
         val result = totalTransfer(transfer, userCard, mounthLimit)
 
-        assertEquals (0, result)
+        assertEquals(0, result)
     }
 
     @Test
@@ -110,8 +165,9 @@ class MainKtTest {
 
         val result = totalTransfer(transfer, userCard, mounthLimit)
 
-        assertEquals (0, result)
+        assertEquals(0, result)
     }
+
     @Test
     fun totalTransferMaestroWithDiscont() {
         val transfer = 85_000
@@ -120,7 +176,7 @@ class MainKtTest {
 
         val result = totalTransfer(transfer, userCard, mounthLimit)
 
-        assertEquals (530, result)
+        assertEquals(530, result)
     }
 
     @Test
@@ -131,9 +187,8 @@ class MainKtTest {
 
         val result = totalTransfer(transfer, userCard, mounthLimit)
 
-        assertEquals ("Внимание! Сумма месячных переводов по Maestro превышена", result)
+        assertEquals("Внимание! Сумма месячных переводов по Maestro превышена", result)
     }
-
 
     @Test
     fun totalTransferMasterCardWithDiscount() {
@@ -143,7 +198,7 @@ class MainKtTest {
 
         val result = totalTransfer(transfer, userCard, mounthLimit)
 
-        assertEquals (0, result)
+        assertEquals(0, result)
     }
 
 
@@ -155,7 +210,7 @@ class MainKtTest {
 
         val result = totalTransfer(transfer, userCard, mounthLimit)
 
-        assertEquals (620, result)
+        assertEquals(620, result)
     }
 
     @Test
@@ -166,6 +221,28 @@ class MainKtTest {
 
         val result = totalTransfer(transfer, userCard, mounthLimit)
 
-        assertEquals ("Внимание! Сумма месячных переводов по MasterCard превышена", result)
+        assertEquals("Внимание! Сумма месячных переводов по MasterCard превышена", result)
+    }
+
+    @Test
+    fun totalTransferUnknown() {
+        val transfer = 10_000
+        val userCard = "Cash"
+        val mounthLimit = 10_000
+
+        val result = totalTransfer(transfer, userCard, mounthLimit)
+
+        assertEquals("Внимание! внесены не корректные данные", result)
+    }
+
+    @Test
+    fun totalTransferMax() {
+        val transfer = 1_000_000
+        val userCard = "Cash"
+        val mounthLimit = 1_500_000
+
+        val result = totalTransfer(transfer, userCard, mounthLimit)
+
+        assertEquals("Внимание! внесены не корректные данные", result)
     }
 }

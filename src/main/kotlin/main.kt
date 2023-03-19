@@ -1,5 +1,5 @@
 fun main() {
-    val userTransfer = totalTransfer(transfer = 75_000, userCard = "Visa", mounthLimit = 50_000)
+    val userTransfer = totalTransfer(transfer = 1_000, userCard = "Cash", mounthLimit = 50_000)
     println("Сумма комиссии: $userTransfer")
 }
 

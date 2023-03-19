@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>main.kt</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">AutoTest</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">main.kt</span></div><h1>main.kt</h1><pre class="source lang-java linenums">fun main() {
-<span class="nc" id="L2">    val userTransfer = totalTransfer(transfer = 75_000, userCard = &quot;Visa&quot;, mounthLimit = 50_000)</span>
+<span class="nc" id="L2">    val userTransfer = totalTransfer(transfer = 1_000, userCard = &quot;Cash&quot;, mounthLimit = 50_000)</span>
 <span class="nc" id="L3">    println(&quot;Сумма комиссии: $userTransfer&quot;)</span>
 <span class="nc" id="L4">}</span>
 
-<span class="pc bpc" id="L6" title="6 of 16 branches missed.">fun totalTransfer(transfer: Int, userCard: String, mounthLimit: Int) = when (userCard) {</span>
+<span class="pc bpc" id="L6" title="5 of 16 branches missed.">fun totalTransfer(transfer: Int, userCard: String, mounthLimit: Int) = when (userCard) {</span>
     &quot;MasterCard&quot;, &quot;Maestro&quot; -&gt; {
 <span class="fc" id="L8">        when {</span>
 <span class="fc bfc" id="L9" title="All 2 branches covered.">            mounthLimit &lt; 600_000 -&gt; {</span>
@@ -21,8 +21,8 @@
     &quot;Visa&quot;, &quot;Mir&quot; -&gt; {
 <span class="fc" id="L22">        when {</span>
 <span class="fc bfc" id="L23" title="All 2 branches covered.">            mounthLimit &lt; 600_000 -&gt; {</span>
-<span class="pc bpc" id="L24" title="1 of 2 branches missed.">                if (transfer * 0.075 &lt; 35) {</span>
-<span class="nc" id="L25">                    35</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">                if (transfer * 0.075 &lt; 35) {</span>
+<span class="fc" id="L25">                    35</span>
                 } else {
 <span class="fc" id="L27">                    (transfer * 0.075).toInt()</span>
                 }
@@ -40,6 +40,6 @@
         }
     }
 
-<span class="nc" id="L43">    else -&gt; (&quot;Внимание! внесены не корректные данные&quot;)</span>
+<span class="fc" id="L43">    else -&gt; (&quot;Внимание! внесены не корректные данные&quot;)</span>
 <span class="fc" id="L44">}</span>
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
